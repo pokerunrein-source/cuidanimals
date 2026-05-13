@@ -842,29 +842,32 @@ body {
     right: 30px;
     width: 60px;
     height: 60px;
-    background-color: var(--primary-color);
+    background-color: #25D366;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     z-index: 999;
-    box-shadow: 0 4px 20px rgba(255, 20, 147, 0.4);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
     transition: all 0.3s ease;
     animation: floatWhatsApp 3s ease-in-out infinite;
 }
 
 .whatsapp-button:hover {
-    background-color: #FF0080;
+    background-color: #20BA5A;
     transform: scale(1.1);
-    box-shadow: 0 6px 30px rgba(255, 20, 147, 0.6);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
 }
 
 .whatsapp-icon {
-    font-size: 30px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #FFFFFF;
+    stroke: #FFFFFF;
 }
 
 @keyframes floatWhatsApp {
@@ -888,6 +891,6 @@ body {
     }
 
     .whatsapp-icon {
-        font-size: 24px;
+        font-size: 26px;
     }
 }
