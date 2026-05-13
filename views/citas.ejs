@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Cita - CuidAnimals</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-brand">
+                <span class="logo-icon">🐾</span>
+                <span class="logo-text">CuidAnimals</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="/galeria">Galería</a></li>
+                <li><a href="/citas" class="active">Citas</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Reservar Cita</h1>
+            <p>Elige el servicio perfecto para tu mascota</p>
+        </div>
+    </section>
+
+    <!-- Formulario de Citas -->
+    <section class="citas-section">
+        <div class="container">
+            <div class="citas-form-wrapper">
+                <h2>Formulario de Reserva</h2>
+                <form id="citasForm" class="citas-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mascota">Nombre de tu Mascota *</label>
+                        <input type="text" id="mascota" name="mascota" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="servicio">Servicio Deseado *</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="">Selecciona un servicio</option>
+                                <% servicios.forEach(servicio => { %>
+                                    <option value="<%= servicio.nombre %>"><%= servicio.nombre %> - <%= servicio.precio %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha *</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hora">Hora *</label>
+                        <select id="hora" name="hora" required>
+                            <option value="">Selecciona una hora</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">01:00 PM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Observaciones Especiales</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos algo especial sobre tu mascota..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Reservar Cita</button>
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información adicional -->
+    <section class="citas-info">
+        <div class="container">
+            <h2>Información sobre nuestras citas</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>⏰ Respuesta Rápida</h3>
+                    <p>Te confirmamos tu cita en menos de 24 horas</p>
+                </div>
+                <div class="info-card">
+                    <h3>📱 Confirmación por SMS</h3>
+                    <p>Recibirás recordatorios por SMS el día de tu cita</p>
+                </div>
+                <div class="info-card">
+                    <h3>💳 Pago Flexible</h3>
+                    <p>Aceptamos efectivo, transferencia y tarjeta</p>
+                </div>
+                <div class="info-card">
+                    <h3>🔄 Cancelación Fácil</h3>
+                    <p>Puedes cancelar o cambiar tu cita sin problemas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CuidAnimals. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/cuidanimals.esp" target="_blank">Instagram</a>
+                <a href="https://facebook.com/cuidanimals" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        document.getElementById('citasForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                telefono: document.getElementById('telefono').value,
+                mascota: document.getElementById('mascota').value,
+                servicio: document.getElementById('servicio').value,
+                fecha: document.getElementById('fecha').value,
+                hora: document.getElementById('hora').value
+            };
+
+            try {
+                const response = await fetch('/api/cita', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    document.getElementById('formMessage').textContent = '✅ ' + data.mensaje;
+                    document.getElementById('formMessage').classList.add('success');
+                    document.getElementById('formMessage').style.display = 'block';
+                    document.getElementById('citasForm').reset();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('formMessage').textContent = '❌ Error al enviar la cita. Intenta de nuevo.';
+                document.getElementById('formMessage').classList.add('error');
+                document.getElementById('formMessage').style.display = 'block';
+            }
+        });
+
+        // Establecer fecha mínima a hoy
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('fecha').setAttribute('min', today);
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - CuidAnimals</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-brand">
+                <span class="logo-icon">🐾</span>
+                <span class="logo-text">CuidAnimals</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/servicios" class="active">Servicios</a></li>
+                <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="/galeria">Galería</a></li>
+                <li><a href="/citas">Citas</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nuestros Servicios</h1>
+            <p>Ofertas profesionales de cuidado para tu mascota</p>
+        </div>
+    </section>
+
+    <!-- Servicios Detallados -->
+    <section class="servicios-detail">
+        <div class="container">
+            <% servicios.forEach(servicio => { %>
+                <div class="servicio-detail-card">
+                    <div class="servicio-detail-icon"><%= servicio.icono %></div>
+                    <div class="servicio-detail-content">
+                        <h2><%= servicio.nombre %></h2>
+                        <p><%= servicio.descripcion %></p>
+                        <p class="precio"><strong>Precio: <%= servicio.precio %></strong></p>
+                        <ul class="features">
+                            <li>✓ Servicio profesional</li>
+                            <li>✓ Atención personalizada</li>
+                            <li>✓ Máxima seguridad</li>
+                            <li>✓ Disponible todos los días</li>
+                        </ul>
+                        <a href="/citas" class="btn btn-primary">Reservar <%= servicio.nombre %></a>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+
+    <!-- Por qué elegirnos -->
+    <section class="why-us">
+        <div class="container">
+            <h2>¿Por qué elegir CuidAnimals?</h2>
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <h3>👥 Profesionales Certificados</h3>
+                    <p>Nuestro equipo cuenta con experiencia y certificaciones en cuidado animal.</p>
+                </div>
+                <div class="why-card">
+                    <h3>❤️ Amor por los Animales</h3>
+                    <p>Cada mascota recibe atención amorosa y personalizada.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🔒 Seguridad Garantizada</h3>
+                    <p>Cuidamos la seguridad y bienestar de tu mascota en todo momento.</p>
+                </div>
+                <div class="why-card">
+                    <h3>📞 Disponibilidad 24/7</h3>
+                    <p>Siempre disponibles para resolver cualquier emergencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CuidAnimals. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/cuidanimals.esp" target="_blank">Instagram</a>
+                <a href="https://facebook.com/cuidanimals" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

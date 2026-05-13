@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - CuidAnimals</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-brand">
+                <span class="logo-icon">🐾</span>
+                <span class="logo-text">CuidAnimals</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/servicios">Servicios</a></li>
+                <li><a href="/sobre-nosotros" class="active">Sobre Nosotros</a></li>
+                <li><a href="/galeria">Galería</a></li>
+                <li><a href="/citas">Citas</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Sobre CuidAnimals</h1>
+            <p>Conoce nuestro compromiso con el cuidado de mascotas</p>
+        </div>
+    </section>
+
+    <!-- Nuestra Historia -->
+    <section class="about-section">
+        <div class="container">
+            <h2>Nuestra Historia</h2>
+            <div class="about-content">
+                <p>En CuidAnimals, creemos que cada mascota merece el mejor cuidado posible. Nuestro equipo está formado por profesionales apasionados por los animales, dedicados a proporcionar servicios de calidad.</p>
+                <p>Desde nuestros inicios, hemos atendido a miles de mascotas y sus familias en Pego, Alicante. Nos enorgullece tener una valoración de 5/5 estrellas en Google con más de 5,000 opiniones.</p>
+                <p>Nuestra misión es simple: proporcionar un cuidado profesional, amoroso y confiable para tu mascota mientras tú trabajas o viajas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="values-section">
+        <div class="container">
+            <h2>Nuestros Valores</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>🐾 Amor por los Animales</h3>
+                    <p>Cada interacción con los animales está basada en el amor y el respeto.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🎯 Profesionalismo</h3>
+                    <p>Ofrecemos servicios de la más alta calidad profesional.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🔐 Confianza</h3>
+                    <p>Somos el confidente de tus mascotas y tu tranquilidad.</p>
+                </div>
+                <div class="value-card">
+                    <h3>💪 Compromiso</h3>
+                    <p>Nos comprometemos a la excelencia en cada servicio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section class="contact-info-section">
+        <div class="container">
+            <h2>Información de Contacto</h2>
+            <div class="contact-info-grid">
+                <div class="contact-card">
+                    <h3>📍 Ubicación</h3>
+                    <p><%= contactInfo.direccion %></p>
+                </div>
+                <div class="contact-card">
+                    <h3>📞 Teléfono</h3>
+                    <p><a href="tel:<%= contactInfo.telefono %>"><%= contactInfo.telefono %></a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>⏰ Horario</h3>
+                    <p><strong>Lunes a Viernes:</strong> <%= contactInfo.horario.lunes_viernes %></p>
+                    <p><strong>Sábados:</strong> <%= contactInfo.horario.sabados %></p>
+                    <p><strong>Domingos:</strong> <%= contactInfo.horario.domingos %></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Visítanos</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.3984568074926!2d-0.3987!3d38.7626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd623f8b0f8b0f8b%3A0x1234567890123456!2sCarrer%20Sant%20Jaume%2C%2025%2C%2003780%20Pego%2C%20Alicante!5e0!3m2!1ses!2ses!4v1234567890123" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CuidAnimals. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/cuidanimals.esp" target="_blank">Instagram</a>
+                <a href="https://facebook.com/cuidanimals" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
