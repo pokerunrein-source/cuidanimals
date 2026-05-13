@@ -860,10 +860,11 @@ body {
     box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
 }
 
-.whatsapp-icon {
-    width: 28px;
-    height: 28px;
-    fill: #FFFFFF;
+.whatsapp-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 @keyframes floatWhatsApp {
