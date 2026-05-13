@@ -105,5 +105,21 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Logger de eventos (para debugging)
+// ===== Efecto Parallax en Hero =====
+const heroBg = document.getElementById('heroBg');
+
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+function handleParallax() {
+    if (!heroBg || isMobile()) return;
+    const scrollY = window.scrollY;
+    heroBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+}
+
+if (heroBg) {
+    window.addEventListener('scroll', handleParallax, { passive: true });
+}
+
 console.log('CuidAnimals - Página cargada correctamente ✅');
