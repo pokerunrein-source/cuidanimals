@@ -144,10 +144,6 @@ body {
 
 /* ===== Hero Section ===== */
 .hero {
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     padding: 100px 20px;
     text-align: center;
     border-bottom: 2px solid var(--border-color);
@@ -156,6 +152,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg-parallax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/images/foto2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    will-change: clip-path;
 }
 
 /* Overlay oscuro para legibilidad */
