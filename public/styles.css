@@ -759,6 +759,131 @@ body {
     color: var(--white);
 }
 
+/* ===== Blobs decorativos animados ===== */
+.servicios-section,
+.testimonios-section,
+.citas-section,
+.citas-info,
+.contacto-section,
+.page-header {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Blob 1 — lila suave, servicios */
+.servicios-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at center, rgba(216, 180, 254, 0.5) 0%, transparent 68%) no-repeat,
+        radial-gradient(ellipse at center, rgba(192, 132, 252, 0.35) 0%, transparent 68%) no-repeat;
+    background-size: 55% 65%, 48% 55%;
+    background-position: 8% 15%, 88% 80%;
+    animation: blobDrift1 14s ease-in-out infinite alternate;
+}
+
+.servicios-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(ellipse at center, rgba(240, 171, 252, 0.35) 0%, transparent 65%) no-repeat;
+    background-size: 42% 50%;
+    background-position: 55% 8%;
+    animation: blobDrift2 19s ease-in-out infinite alternate;
+}
+
+/* Blob 2 — testimonios */
+.testimonios-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at center, rgba(216, 180, 254, 0.45) 0%, transparent 68%) no-repeat,
+        radial-gradient(ellipse at center, rgba(167, 139, 250, 0.3) 0%, transparent 65%) no-repeat;
+    background-size: 50% 60%, 55% 65%;
+    background-position: 88% 25%, 12% 75%;
+    animation: blobDrift3 16s ease-in-out infinite alternate;
+}
+
+/* Blob 3 — citas y contacto */
+.citas-section::before,
+.contacto-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at center, rgba(216, 180, 254, 0.4) 0%, transparent 65%) no-repeat,
+        radial-gradient(ellipse at center, rgba(192, 132, 252, 0.3) 0%, transparent 65%) no-repeat;
+    background-size: 52% 60%, 45% 55%;
+    background-position: 15% 80%, 82% 20%;
+    animation: blobDrift4 20s ease-in-out infinite alternate;
+}
+
+/* Page headers (Servicios, Galería, etc.) */
+.page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at center, rgba(240, 171, 252, 0.4) 0%, transparent 65%) no-repeat,
+        radial-gradient(ellipse at center, rgba(216, 180, 254, 0.3) 0%, transparent 65%) no-repeat;
+    background-size: 60% 70%, 50% 60%;
+    animation: blobDriftHeader 12s ease-in-out infinite alternate;
+}
+
+@keyframes blobDriftHeader {
+    from { background-position: 10% 50%, 90% 50%; }
+    to   { background-position: 90% 50%, 10% 50%; }
+}
+
+@keyframes blobDrift1 {
+    from { background-position: 8%  15%, 88% 80%; }
+    to   { background-position: 75% 80%, 15% 15%; }
+}
+
+@keyframes blobDrift2 {
+    from { background-position: 55% 8%; }
+    to   { background-position: 45% 92%; }
+}
+
+@keyframes blobDrift3 {
+    from { background-position: 88% 25%, 12% 75%; }
+    to   { background-position: 12% 75%, 88% 25%; }
+}
+
+@keyframes blobDrift4 {
+    from { background-position: 15% 80%, 82% 20%; }
+    to   { background-position: 80% 20%, 15% 80%; }
+}
+
+/* Desactivar blobs en móvil para rendimiento */
+@media (prefers-reduced-motion: reduce) {
+    .servicios-section::before, .servicios-section::after,
+    .testimonios-section::before, .citas-section::before,
+    .contacto-section::before, .page-header::before {
+        animation: none;
+    }
+}
+@media (max-width: 768px) {
+    .servicios-section::before, .servicios-section::after,
+    .testimonios-section::before, .citas-section::before,
+    .contacto-section::before, .page-header::before {
+        display: none;
+    }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
     .container {
