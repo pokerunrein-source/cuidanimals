@@ -799,7 +799,7 @@ body {
     .hero {
         min-height: 400px;
         padding: 50px 20px;
-        background-attachment: scroll;
+        background-attachment: scroll !important;
         background-size: cover;
         background-position: center;
     }
@@ -1189,7 +1189,7 @@ body {
     .hero {
         min-height: 250px;
         padding: 30px 10px;
-        background-attachment: scroll;
+        background-attachment: scroll !important;
         background-size: cover;
         background-position: center;
     }
