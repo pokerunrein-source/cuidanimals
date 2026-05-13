@@ -152,21 +152,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-}
-
-.hero-bg-parallax {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
     background-image: url('/images/foto2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 0;
-    will-change: clip-path;
+    background-attachment: fixed;
 }
 
 /* Overlay oscuro para legibilidad */
@@ -811,6 +801,8 @@ body {
         min-height: 400px;
         padding: 50px 20px;
         background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
     }
 
     .hero-content {

@@ -105,36 +105,5 @@ function scrollToSection(sectionId) {
     }
 }
 
-// ===== Efecto Parallax - Imagen fija recortada al área del hero =====
-const heroEl = document.getElementById('hero');
-const heroBgParallax = document.getElementById('heroBgParallax');
-
-function updateParallax() {
-    if (!heroEl || !heroBgParallax) return;
-    if (window.innerWidth <= 768) {
-        heroBgParallax.style.display = 'none';
-        return;
-    }
-    heroBgParallax.style.display = 'block';
-
-    const rect = heroEl.getBoundingClientRect();
-    const viewportH = window.innerHeight;
-    const top = Math.max(0, rect.top);
-    const bottom = Math.min(viewportH, rect.bottom);
-
-    if (bottom > top) {
-        const insetTop = top;
-        const insetBottom = viewportH - bottom;
-        heroBgParallax.style.clipPath = `inset(${insetTop}px 0 ${insetBottom}px 0)`;
-    } else {
-        heroBgParallax.style.clipPath = 'inset(100% 0 0 0)';
-    }
-}
-
-if (heroEl && heroBgParallax) {
-    window.addEventListener('scroll', updateParallax, { passive: true });
-    window.addEventListener('resize', updateParallax, { passive: true });
-    updateParallax();
-}
 
 console.log('CuidAnimals - Página cargada correctamente ✅');
