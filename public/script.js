@@ -105,24 +105,4 @@ function scrollToSection(sectionId) {
     }
 }
 
-// ===== Efecto Parallax en Hero =====
-const heroBg = document.getElementById('heroBg');
-
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
-function handleParallax() {
-    if (!heroBg || isMobile()) return;
-    const hero = heroBg.parentElement;
-    const heroTop = hero.getBoundingClientRect().top;
-    // Mover la imagen en dirección opuesta al scroll para que quede "quieta"
-    heroBg.style.transform = `translateY(${-heroTop * 0.5}px)`;
-}
-
-if (heroBg) {
-    window.addEventListener('scroll', handleParallax, { passive: true });
-    handleParallax(); // Llamar al cargar también
-}
-
 console.log('CuidAnimals - Página cargada correctamente ✅');
