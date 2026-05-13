@@ -926,6 +926,7 @@ body {
 
     .navbar .container {
         padding: 10px 12px;
+        gap: 10px;
     }
 
     .logo-text {
@@ -938,12 +939,14 @@ body {
     }
 
     .nav-links {
-        gap: 8px;
-        font-size: 11px;
+        gap: 6px;
+        font-size: 10px;
+        flex-wrap: wrap;
     }
 
     .nav-links a {
-        padding: 5px;
+        padding: 4px 6px;
+        white-space: nowrap;
     }
 
     .hero {
@@ -1134,6 +1137,257 @@ body {
 
     .social-links a {
         font-size: 12px;
+    }
+}
+
+/* ===== Ultra Mobile (Z Fold, muy estrechos) ===== */
+@media (max-width: 380px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .navbar .container {
+        padding: 8px 10px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .logo-brand {
+        gap: 5px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .logo-text {
+        font-size: 14px;
+    }
+
+    .logo-icon {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 4px;
+        font-size: 9px;
+    }
+
+    .nav-links li {
+        flex: 0 0 auto;
+    }
+
+    .nav-links a {
+        padding: 3px 4px;
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 250px;
+        padding: 30px 10px;
+    }
+
+    .hero-content {
+        padding: 15px 12px;
+        border-radius: 8px;
+    }
+
+    .hero-content h1 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .btn-large {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .servicios-section,
+    .testimonios-section,
+    .about-section,
+    .contact-info-section,
+    .citas-section,
+    .contacto-section,
+    .gallery-section,
+    .page-header {
+        padding: 20px 10px;
+    }
+
+    .servicios-section h2,
+    .testimonios-section h2,
+    .page-header h1,
+    .about-section h2,
+    .values-section h2,
+    .why-us h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .servicios-grid,
+    .testimonios-grid,
+    .why-us-grid,
+    .values-grid,
+    .gallery-grid,
+    .contact-info-grid {
+        gap: 10px;
+    }
+
+    .servicio-card {
+        padding: 12px;
+    }
+
+    .servicio-card h3 {
+        font-size: 16px;
+    }
+
+    .servicio-card p {
+        font-size: 12px;
+    }
+
+    .servicio-icon {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .servicio-detail-card {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .servicio-detail-icon {
+        font-size: 50px;
+    }
+
+    .servicio-detail-content h2 {
+        font-size: 18px;
+    }
+
+    .features li {
+        font-size: 12px;
+    }
+
+    .form-group label {
+        font-size: 11px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .citas-form-wrapper,
+    .contacto-form,
+    .contacto-info {
+        padding: 12px;
+    }
+
+    .contact-card {
+        padding: 12px;
+    }
+
+    .contact-card h3 {
+        font-size: 13px;
+    }
+
+    .contact-card p {
+        font-size: 11px;
+    }
+
+    .info-item {
+        margin-bottom: 12px;
+    }
+
+    .info-item h3 {
+        font-size: 12px;
+    }
+
+    .info-item p {
+        font-size: 11px;
+    }
+
+    .testimonial-card {
+        padding: 12px;
+    }
+
+    .testimonial-card p {
+        font-size: 11px;
+    }
+
+    .page-header h1 {
+        font-size: 18px;
+    }
+
+    .page-header p {
+        font-size: 11px;
+    }
+
+    .map-section iframe {
+        height: 150px;
+    }
+
+    .gallery-placeholder {
+        font-size: 40px;
+        padding: 20px 10px;
+        min-height: 120px;
+    }
+
+    .gallery-item p {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .about-photo {
+        max-width: 100%;
+        border: 2px solid var(--primary-color);
+    }
+
+    .form-message {
+        font-size: 11px;
+    }
+
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .footer p {
+        font-size: 11px;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-links a {
+        font-size: 11px;
+    }
+
+    .whatsapp-button {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .whatsapp-logo-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .about-wrapper,
+    .contacto-wrapper {
+        gap: 15px;
     }
 }
 
