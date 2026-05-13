@@ -144,129 +144,51 @@ body {
 
 /* ===== Hero Section ===== */
 .hero {
-    background: linear-gradient(135deg, var(--light-bg) 0%, #E8D4FF 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     padding: 100px 20px;
     text-align: center;
     border-bottom: 2px solid var(--border-color);
     position: relative;
     overflow: hidden;
-    min-height: 500px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Contenedor de animales */
-.animals-container {
+/* Overlay oscuro para legibilidad */
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
-}
-
-.animal {
-    position: absolute;
-    font-size: 48px;
-    opacity: 0.3;
-    animation: float 15s infinite ease-in-out;
-}
-
-.animal-1 {
-    left: 5%;
-    top: 20%;
-    animation: floatLeft 20s infinite ease-in-out;
-}
-
-.animal-2 {
-    right: 8%;
-    top: 30%;
-    animation: floatRight 25s infinite ease-in-out;
-}
-
-.animal-3 {
-    left: 15%;
-    bottom: 20%;
-    animation: floatUp 22s infinite ease-in-out;
-}
-
-.animal-4 {
-    right: 15%;
-    bottom: 25%;
-    animation: floatDown 18s infinite ease-in-out;
-}
-
-.animal-5 {
-    left: 50%;
-    top: 15%;
-    animation: floatLeft 28s infinite ease-in-out;
-}
-
-.animal-6 {
-    right: 40%;
-    bottom: 15%;
-    animation: floatRight 24s infinite ease-in-out;
-}
-
-.animal-7 {
-    left: 35%;
-    bottom: 10%;
-    animation: floatUp 26s infinite ease-in-out;
-}
-
-@keyframes floatLeft {
-    0% { transform: translateX(0) translateY(0); }
-    25% { transform: translateX(-30px) translateY(-20px); }
-    50% { transform: translateX(-60px) translateY(0); }
-    75% { transform: translateX(-30px) translateY(20px); }
-    100% { transform: translateX(0) translateY(0); }
-}
-
-@keyframes floatRight {
-    0% { transform: translateX(0) translateY(0); }
-    25% { transform: translateX(30px) translateY(20px); }
-    50% { transform: translateX(60px) translateY(0); }
-    75% { transform: translateX(30px) translateY(-20px); }
-    100% { transform: translateX(0) translateY(0); }
-}
-
-@keyframes floatUp {
-    0% { transform: translateY(0) translateX(0); }
-    25% { transform: translateY(-30px) translateX(-15px); }
-    50% { transform: translateY(-60px) translateX(0); }
-    75% { transform: translateY(-30px) translateX(15px); }
-    100% { transform: translateY(0) translateX(0); }
-}
-
-@keyframes floatDown {
-    0% { transform: translateY(0) translateX(0); }
-    25% { transform: translateY(30px) translateX(15px); }
-    50% { transform: translateY(60px) translateX(0); }
-    75% { transform: translateY(30px) translateX(-15px); }
-    100% { transform: translateY(0) translateX(0); }
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content h1 {
     font-size: 48px;
-    color: var(--dark-text);
+    color: var(--primary-color);
     margin-bottom: 20px;
+    text-shadow: none;
 }
 
 .hero-content p {
     font-size: 20px;
-    color: #6B4B8A;
+    color: var(--dark-text);
     margin-bottom: 30px;
 }
 
@@ -499,11 +421,35 @@ body {
     padding: 60px 20px;
 }
 
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-content {
+    padding: 20px;
+}
+
 .about-content p {
     font-size: 16px;
     color: #6B4B8A;
     margin-bottom: 15px;
     line-height: 1.8;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.2);
+    border: 3px solid var(--primary-color);
 }
 
 /* ===== Contact Info Section ===== */
@@ -574,6 +520,13 @@ body {
 .gallery-item:hover {
     transform: translateY(-5px);
     border-color: var(--primary-color);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
 }
 
 .gallery-placeholder {
@@ -849,6 +802,11 @@ body {
 
     .contact-info-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
 
