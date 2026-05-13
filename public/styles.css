@@ -147,6 +147,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     padding: 100px 20px;
     text-align: center;
     border-bottom: 2px solid var(--border-color);
@@ -798,6 +799,9 @@ body {
     .hero {
         min-height: 400px;
         padding: 50px 20px;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
     }
 
     .hero-content {
@@ -1185,6 +1189,9 @@ body {
     .hero {
         min-height: 250px;
         padding: 30px 10px;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
     }
 
     .hero-content {
