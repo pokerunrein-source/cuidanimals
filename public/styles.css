@@ -861,13 +861,9 @@ body {
 }
 
 .whatsapp-icon {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    stroke: #FFFFFF;
+    width: 28px;
+    height: 28px;
+    fill: #FFFFFF;
 }
 
 @keyframes floatWhatsApp {
