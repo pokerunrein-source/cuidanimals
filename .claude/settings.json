@@ -12,7 +12,11 @@
       "Bash(node server.js)",
       "PowerShell(Get-Process node -ErrorAction SilentlyContinue)",
       "PowerShell(Stop-Process -Force -ErrorAction SilentlyContinue)",
-      "PowerShell(\"Procesos node detenidos\")"
+      "PowerShell(\"Procesos node detenidos\")",
+      "PowerShell(taskkill /F /IM node.exe 2>$null)",
+      "PowerShell(Start-Process -WorkingDirectory \"C:\\\\Users\\\\ASUS\\\\Desktop\\\\Cuidanimals\" -FilePath \"node\" -ArgumentList \"server.js\" -WindowStyle Normal)",
+      "PowerShell(Set-Location \"C:\\\\Users\\\\ASUS\\\\Desktop\\\\Cuidanimals\"; Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"node server.js\" -WindowStyle Normal; Start-Sleep -Seconds 3; Get-Process node -ErrorAction SilentlyContinue | Select-Object Id, Name)",
+      "Bash(curl -s http://localhost:3000)"
     ]
   }
 }
