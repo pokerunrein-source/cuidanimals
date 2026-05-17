@@ -1,3 +1,6 @@
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
 /* ===== Variables y Reset ===== */
 :root {
     --primary-color: #FF1493;
@@ -21,10 +24,11 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--dark-text);
     background-color: var(--white);
+    font-weight: 400;
 }
 
 /* ===== Animaciones ===== */
@@ -119,6 +123,24 @@ body {
     }
 }
 
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
 /* ===== Utilidades ===== */
 .container {
     max-width: 1200px;
@@ -172,11 +194,15 @@ body {
 
 /* ===== Navbar ===== */
 .navbar {
-    background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(31, 38, 135, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 .navbar .container {
@@ -341,9 +367,13 @@ body {
 
 .hero-content h1 {
     font-size: 48px;
-    color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #7B2CBF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 20px;
-    text-shadow: none;
+    font-weight: 700;
+    animation: fadeInDown 0.8s ease-out;
 }
 
 .hero-content p {
@@ -366,8 +396,25 @@ body {
 .about-section h2 {
     text-align: center;
     font-size: 36px;
-    color: var(--dark-text);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #7B2CBF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.servicios-section h2:hover,
+.testimonios-section h2:hover,
+.why-us h2:hover,
+.values-section h2:hover,
+.citas-info h2:hover,
+.about-section h2:hover {
+    letter-spacing: 0px;
+    filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.4));
 }
 
 .servicios-grid {
@@ -588,9 +635,13 @@ body {
 
 .why-card h3,
 .value-card h3 {
-    color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #7B2CBF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 10px;
     font-size: 20px;
+    font-weight: 600;
 }
 
 .why-card p,
