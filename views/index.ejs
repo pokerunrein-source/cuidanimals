@@ -57,26 +57,13 @@
         </div>
         <div class="container">
             <div class="estadisticas-grid">
-                <div class="stat-card">
-                    <div class="stat-number">+500</div>
-                    <div class="stat-label">Mascotas Cuidadas</div>
-                    <div class="stat-description">Hemos cuidado miles de mascotas</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Años de Experiencia</div>
-                    <div class="stat-description">Más de 5 años sirviendo</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">4.9</div>
-                    <div class="stat-label">Calificación</div>
-                    <div class="stat-description">Puntuación en Google</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Disponibilidad</div>
-                    <div class="stat-description">Siempre a tu servicio</div>
-                </div>
+                <% estadisticas.forEach(stat => { %>
+                    <div class="stat-card">
+                        <div class="stat-number"><%= stat.numero %></div>
+                        <div class="stat-label"><%= stat.label %></div>
+                        <div class="stat-description"><%= stat.descripcion %></div>
+                    </div>
+                <% }); %>
             </div>
         </div>
     </section>

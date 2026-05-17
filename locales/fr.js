@@ -183,6 +183,13 @@ module.exports = {
     { nombre: 'Marjolijn Kleinbergen', texto: 'Elle est une véritable magicienne des chats 😍 Nous sommes ravis d\'Evi!', rating: 5 },
   ],
 
+  estadisticas_data: [
+    { numero: '+500', label: 'Animaux Soignés', descripcion: 'Nous avons soigné des milliers d\'animaux' },
+    { numero: '5+', label: 'Années d\'Expérience', descripcion: 'Plus de 5 ans de service' },
+    { numero: '4.9', label: 'Évaluation', descripcion: 'Note Google' },
+    { numero: '24/7', label: 'Disponibilité', descripcion: 'Toujours à votre service' },
+  ],
+
   contactInfo: {
     direccion: 'Carrer Sant Jaume, 25, 03780 Pego, Alicante, Espagne',
     telefono: '+34 622 35 80 09',

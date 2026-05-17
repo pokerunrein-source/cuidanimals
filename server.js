@@ -62,7 +62,7 @@ app.get('/set-lang/:lang', (req, res) => {
 // Rutas
 app.get('/', (req, res) => {
   const t = locales[detectLanguage(req)];
-  res.render('index', { t, servicios: t.servicios_data, testimonios: t.testimonios_data });
+  res.render('index', { t, servicios: t.servicios_data, testimonios: t.testimonios_data, estadisticas: t.estadisticas_data });
 });
 
 app.get('/servicios', (req, res) => {

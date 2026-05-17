@@ -183,6 +183,13 @@ module.exports = {
     { nombre: 'Marjolijn Kleinbergen', texto: 'She is a true cat whisperer 😍 ¡Estamos encantados con Evi!', rating: 5 },
   ],
 
+  estadisticas_data: [
+    { numero: '+500', label: 'Mascotas Cuidadas', descripcion: 'Hemos cuidado miles de mascotas' },
+    { numero: '5+', label: 'Años de Experiencia', descripcion: 'Más de 5 años sirviendo' },
+    { numero: '4.9', label: 'Calificación', descripcion: 'Puntuación en Google' },
+    { numero: '24/7', label: 'Disponibilidad', descripcion: 'Siempre a tu servicio' },
+  ],
+
   contactInfo: {
     direccion: 'Carrer Sant Jaume, 25, 03780 Pego, Alicante, España',
     telefono: '+34 622 35 80 09',
