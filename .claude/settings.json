@@ -9,7 +9,10 @@
       "Bash(curl -s http://localhost:3000/styles.css)",
       "Bash(curl -s http://localhost:3000/script.js)",
       "Bash(pkill -f \"node server.js\")",
-      "Bash(node server.js)"
+      "Bash(node server.js)",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(\"Procesos node detenidos\")"
     ]
   }
 }

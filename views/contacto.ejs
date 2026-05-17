@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<%= t.lang %>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - CuidAnimals</title>
+    <title><%= t.contacto.title %></title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -15,21 +15,27 @@
                 <span class="logo-text">CuidAnimals</span>
             </div>
             <ul class="nav-links">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/servicios">Servicios</a></li>
-                <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="/galeria">Galería</a></li>
-                <li><a href="/citas">Citas</a></li>
-                <li><a href="/contacto" class="active">Contacto</a></li>
+                <li><a href="/"><%= t.nav.inicio %></a></li>
+                <li><a href="/servicios"><%= t.nav.servicios %></a></li>
+                <li><a href="/sobre-nosotros"><%= t.nav.sobre_nosotros %></a></li>
+                <li><a href="/galeria"><%= t.nav.galeria %></a></li>
+                <li><a href="/citas"><%= t.nav.citas %></a></li>
+                <li><a href="/contacto" class="active"><%= t.nav.contacto %></a></li>
             </ul>
+            <div class="lang-switcher">
+                <a href="/set-lang/es" class="lang-btn <%= t.lang === 'es' ? 'active' : '' %>">🇪🇸 ES</a>
+                <a href="/set-lang/en" class="lang-btn <%= t.lang === 'en' ? 'active' : '' %>">🇬🇧 EN</a>
+                <a href="/set-lang/fr" class="lang-btn <%= t.lang === 'fr' ? 'active' : '' %>">🇫🇷 FR</a>
+                <a href="/set-lang/de" class="lang-btn <%= t.lang === 'de' ? 'active' : '' %>">🇩🇪 DE</a>
+            </div>
         </div>
     </nav>
 
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Contacto</h1>
-            <p>¿Preguntas? Nos encantaría escucharte</p>
+            <h1><%= t.contacto.page_title %></h1>
+            <p><%= t.contacto.page_subtitle %></p>
         </div>
     </section>
 
@@ -39,61 +45,61 @@
             <div class="contacto-wrapper">
                 <!-- Formulario -->
                 <div class="contacto-form">
-                    <h2>Envíanos un Mensaje</h2>
+                    <h2><%= t.contacto.form_title %></h2>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="nombre">Nombre *</label>
+                            <label for="nombre"><%= t.contacto.nombre_label %></label>
                             <input type="text" id="nombre" name="nombre" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email *</label>
+                            <label for="email"><%= t.contacto.email_label %></label>
                             <input type="email" id="email" name="email" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="telefono">Teléfono</label>
+                            <label for="telefono"><%= t.contacto.telefono_label %></label>
                             <input type="tel" id="telefono" name="telefono">
                         </div>
 
                         <div class="form-group">
-                            <label for="mensaje">Mensaje *</label>
+                            <label for="mensaje"><%= t.contacto.mensaje_label %></label>
                             <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-large">Enviar Mensaje</button>
+                        <button type="submit" class="btn btn-primary btn-large"><%= t.contacto.submit_btn %></button>
                         <div id="formMessage" class="form-message" style="display: none;"></div>
                     </form>
                 </div>
 
                 <!-- Información de contacto -->
                 <div class="contacto-info">
-                    <h2>Información de Contacto</h2>
+                    <h2><%= t.contacto.info_title %></h2>
 
                     <div class="info-item">
-                        <h3>📍 Ubicación</h3>
+                        <h3><%= t.contacto.ubicacion_label %></h3>
                         <p><%= contactInfo.direccion %></p>
                     </div>
 
                     <div class="info-item">
-                        <h3>📞 Teléfono</h3>
+                        <h3><%= t.contacto.telefono_section %></h3>
                         <p><a href="tel:<%= contactInfo.telefono %>"><%= contactInfo.telefono %></a></p>
                     </div>
 
                     <div class="info-item">
-                        <h3>📧 Email</h3>
+                        <h3><%= t.contacto.email_section %></h3>
                         <p><a href="mailto:info@cuidanimals.es">info@cuidanimals.es</a></p>
                     </div>
 
                     <div class="info-item">
-                        <h3>⏰ Horario</h3>
-                        <p><strong>Lunes a Viernes:</strong> <%= contactInfo.horario.lunes_viernes %></p>
-                        <p><strong>Sábados:</strong> <%= contactInfo.horario.sabados %></p>
-                        <p><strong>Domingos:</strong> <%= contactInfo.horario.domingos %></p>
+                        <h3><%= t.contacto.horario_section %></h3>
+                        <p><strong><%= t.contacto.lunes_viernes %>:</strong> <%= contactInfo.horario.lunes_viernes %></p>
+                        <p><strong><%= t.contacto.sabados %>:</strong> <%= contactInfo.horario.sabados %></p>
+                        <p><strong><%= t.contacto.domingos %>:</strong> <%= contactInfo.horario.domingos %></p>
                     </div>
 
                     <div class="info-item">
-                        <h3>🌐 Redes Sociales</h3>
+                        <h3><%= t.contacto.redes_section %></h3>
                         <p>
                             <a href="https://instagram.com/cuidanimals.esp" target="_blank">Instagram</a> |
                             <a href="https://facebook.com/cuidanimals" target="_blank">Facebook</a>
@@ -107,7 +113,7 @@
     <!-- Mapa -->
     <section class="map-section">
         <div class="container">
-            <h2>Localización</h2>
+            <h2><%= t.contacto.mapa_title %></h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.3984568074926!2d-0.3987!3d38.7626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd623f8b0f8b0f8b%3A0x1234567890123456!2sCarrer%20Sant%20Jaume%2C%2025%2C%2003780%20Pego%2C%20Alicante!5e0!3m2!1ses!2ses!4v1234567890123" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
@@ -115,7 +121,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 CuidAnimals. Todos los derechos reservados.</p>
+            <p><%= t.footer.rights %></p>
             <div class="social-links">
                 <a href="https://instagram.com/cuidanimals.esp" target="_blank">Instagram</a>
                 <a href="https://facebook.com/cuidanimals" target="_blank">Facebook</a>
@@ -124,12 +130,14 @@
     </footer>
 
     <!-- Botón Flotante WhatsApp -->
-    <a href="https://wa.me/34622358009?text=Hola%20CuidAnimals%20quiero%20saber%20más%20sobre%20vuestros%20servicios" target="_blank" class="whatsapp-button" title="Contactar por WhatsApp">
+    <a href="https://wa.me/34622358009?text=<%= t.whatsapp.message %>" target="_blank" class="whatsapp-button" title="<%= t.whatsapp.title %>">
         <img src="/images/whatsapp-logo.webp" alt="WhatsApp" class="whatsapp-logo-img">
     </a>
 
     <script src="/script.js"></script>
     <script>
+        var errorMsg = '<%= t.contacto.error_msg %>';
+
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -143,9 +151,7 @@
             try {
                 const response = await fetch('/api/contacto', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
 
@@ -159,7 +165,7 @@
                 }
             } catch (error) {
                 console.error('Error:', error);
-                document.getElementById('formMessage').textContent = '❌ Error al enviar el mensaje. Intenta de nuevo.';
+                document.getElementById('formMessage').textContent = '❌ ' + errorMsg;
                 document.getElementById('formMessage').classList.add('error');
                 document.getElementById('formMessage').style.display = 'block';
             }

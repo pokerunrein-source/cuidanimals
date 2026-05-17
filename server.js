@@ -3,108 +3,110 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 
+const locales = {
+  es: require('./locales/es'),
+  en: require('./locales/en'),
+  fr: require('./locales/fr'),
+  de: require('./locales/de'),
+};
+
+function parseCookies(req) {
+  const cookies = {};
+  const header = req.headers.cookie;
+  if (!header) return cookies;
+  header.split(';').forEach(cookie => {
+    const parts = cookie.trim().split('=');
+    const name = parts.shift().trim();
+    cookies[name] = parts.join('=');
+  });
+  return cookies;
+}
+
+function detectLanguage(req) {
+  const cookies = parseCookies(req);
+  if (cookies.lang && locales[cookies.lang]) {
+    return cookies.lang;
+  }
+
+  const acceptLanguage = req.headers['accept-language'] || '';
+  const langs = acceptLanguage
+    .split(',')
+    .map(l => l.trim().split(';')[0].toLowerCase().split('-')[0]);
+
+  for (const lang of langs) {
+    if (lang === 'es') return 'es';
+    if (lang === 'en') return 'en';
+    if (lang === 'fr') return 'fr';
+    if (lang === 'de') return 'de';
+  }
+
+  return 'es';
+}
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Datos de contacto
-const contactInfo = {
-  direccion: 'Carrer Sant Jaume, 25, 03780 Pego, Alicante, España',
-  telefono: '+34 622 35 80 09',
-  email: 'info@cuidanimals.es',
-  horario: {
-    lunes_viernes: '9:00 AM - 7:00 PM',
-    sabados: '10:00 AM - 4:00 PM',
-    domingos: 'Cerrado'
+// Language switch route
+app.get('/set-lang/:lang', (req, res) => {
+  const lang = req.params.lang;
+  if (locales[lang]) {
+    res.cookie('lang', lang, { maxAge: 365 * 24 * 60 * 60 * 1000, httpOnly: false });
   }
-};
-
-// Datos de servicios
-const servicios = [
-  {
-    id: 1,
-    nombre: 'Visitas a Domicilio',
-    descripcion: 'Visitamos tu hogar para cuidar a tu mascota. Paseos, alimentación y juegos.',
-    precio: 'desde €15',
-    icono: '🏠'
-  },
-  {
-    id: 2,
-    nombre: 'Guardería Familiar',
-    descripcion: 'Tu mascota se queda con nosotros en un hogar acogedor mientras tú trabajas.',
-    precio: 'desde €20/día',
-    icono: '🏡'
-  },
-  {
-    id: 3,
-    nombre: 'Paseos de Perros',
-    descripcion: 'Paseos diarios para que tu perro ejercite y socialice con otros perros.',
-    precio: 'desde €10',
-    icono: '🚶'
-  }
-];
-
-// Testimonios
-const testimonios = [
-  {
-    nombre: 'Juanma Lopez',
-    texto: 'Le he dejado a mi gatito de 4 meses durante 12 días.',
-    rating: 5
-  },
-  {
-    nombre: 'María Argüello',
-    texto: 'Estoy encantada con ellos. Profesionales y muy cuidadosos.',
-    rating: 5
-  },
-  {
-    nombre: 'Marjolijn Kleinbergen',
-    texto: 'She is a true cat whisperer 😍 ¡Estamos encantados con Evi!',
-    rating: 5
-  }
-];
+  const referer = req.headers.referer || '/';
+  res.redirect(referer);
+});
 
 // Rutas
 app.get('/', (req, res) => {
-  res.render('index', { servicios, testimonios });
+  const t = locales[detectLanguage(req)];
+  res.render('index', { t, servicios: t.servicios_data, testimonios: t.testimonios_data });
 });
 
 app.get('/servicios', (req, res) => {
-  res.render('servicios', { servicios });
+  const t = locales[detectLanguage(req)];
+  res.render('servicios', { t, servicios: t.servicios_data });
 });
 
 app.get('/sobre-nosotros', (req, res) => {
-  res.render('about', { contactInfo });
+  const t = locales[detectLanguage(req)];
+  res.render('about', { t, contactInfo: t.contactInfo });
 });
 
 app.get('/galeria', (req, res) => {
-  res.render('galeria');
+  const t = locales[detectLanguage(req)];
+  res.render('galeria', { t });
 });
 
 app.get('/citas', (req, res) => {
-  res.render('citas', { servicios });
+  const t = locales[detectLanguage(req)];
+  res.render('citas', { t, servicios: t.servicios_data });
 });
 
 app.get('/contacto', (req, res) => {
-  res.render('contacto', { contactInfo });
+  const t = locales[detectLanguage(req)];
+  res.render('contacto', { t, contactInfo: t.contactInfo });
 });
 
 app.post('/api/cita', (req, res) => {
   const { nombre, email, telefono, fecha, hora, servicio, mascota } = req.body;
   console.log('Nueva cita solicitada:', { nombre, email, telefono, fecha, hora, servicio, mascota });
+  const lang = detectLanguage(req);
   res.json({
     success: true,
-    mensaje: 'Tu solicitud de cita ha sido recibida. Nos pondremos en contacto pronto.'
+    mensaje: locales[lang].citas.success_api,
   });
 });
 
 app.post('/api/contacto', (req, res) => {
   const { nombre, email, telefono, mensaje } = req.body;
   console.log('Nuevo mensaje de contacto:', { nombre, email, telefono, mensaje });
+  const lang = detectLanguage(req);
   res.json({
     success: true,
-    mensaje: 'Tu mensaje ha sido enviado. Nos pondremos en contacto pronto.'
+    mensaje: locales[lang].contacto.success_api,
   });
 });
 

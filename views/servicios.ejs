@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<%= t.lang %>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - CuidAnimals</title>
+    <title><%= t.servicios.title %></title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -15,21 +15,27 @@
                 <span class="logo-text">CuidAnimals</span>
             </div>
             <ul class="nav-links">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/servicios" class="active">Servicios</a></li>
-                <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="/galeria">Galería</a></li>
-                <li><a href="/citas">Citas</a></li>
-                <li><a href="/contacto">Contacto</a></li>
+                <li><a href="/"><%= t.nav.inicio %></a></li>
+                <li><a href="/servicios" class="active"><%= t.nav.servicios %></a></li>
+                <li><a href="/sobre-nosotros"><%= t.nav.sobre_nosotros %></a></li>
+                <li><a href="/galeria"><%= t.nav.galeria %></a></li>
+                <li><a href="/citas"><%= t.nav.citas %></a></li>
+                <li><a href="/contacto"><%= t.nav.contacto %></a></li>
             </ul>
+            <div class="lang-switcher">
+                <a href="/set-lang/es" class="lang-btn <%= t.lang === 'es' ? 'active' : '' %>">🇪🇸 ES</a>
+                <a href="/set-lang/en" class="lang-btn <%= t.lang === 'en' ? 'active' : '' %>">🇬🇧 EN</a>
+                <a href="/set-lang/fr" class="lang-btn <%= t.lang === 'fr' ? 'active' : '' %>">🇫🇷 FR</a>
+                <a href="/set-lang/de" class="lang-btn <%= t.lang === 'de' ? 'active' : '' %>">🇩🇪 DE</a>
+            </div>
         </div>
     </nav>
 
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Nuestros Servicios</h1>
-            <p>Ofertas profesionales de cuidado para tu mascota</p>
+            <h1><%= t.servicios.page_title %></h1>
+            <p><%= t.servicios.page_subtitle %></p>
         </div>
     </section>
 
@@ -42,14 +48,14 @@
                     <div class="servicio-detail-content">
                         <h2><%= servicio.nombre %></h2>
                         <p><%= servicio.descripcion %></p>
-                        <p class="precio"><strong>Precio: <%= servicio.precio %></strong></p>
+                        <p class="precio"><strong><%= t.servicios.precio_label %> <%= servicio.precio %></strong></p>
                         <ul class="features">
-                            <li>✓ Servicio profesional</li>
-                            <li>✓ Atención personalizada</li>
-                            <li>✓ Máxima seguridad</li>
-                            <li>✓ Disponible todos los días</li>
+                            <li><%= t.servicios.feature1 %></li>
+                            <li><%= t.servicios.feature2 %></li>
+                            <li><%= t.servicios.feature3 %></li>
+                            <li><%= t.servicios.feature4 %></li>
                         </ul>
-                        <a href="/citas" class="btn btn-primary">Reservar <%= servicio.nombre %></a>
+                        <a href="/citas" class="btn btn-primary"><%= t.servicios.reservar_prefix %> <%= servicio.nombre %></a>
                     </div>
                 </div>
             <% }); %>
@@ -59,23 +65,23 @@
     <!-- Por qué elegirnos -->
     <section class="why-us">
         <div class="container">
-            <h2>¿Por qué elegir CuidAnimals?</h2>
+            <h2><%= t.servicios.por_que_title %></h2>
             <div class="why-us-grid">
                 <div class="why-card">
-                    <h3>👥 Profesionales Certificados</h3>
-                    <p>Nuestro equipo cuenta con experiencia y certificaciones en cuidado animal.</p>
+                    <h3><%= t.servicios.why1_title %></h3>
+                    <p><%= t.servicios.why1_desc %></p>
                 </div>
                 <div class="why-card">
-                    <h3>❤️ Amor por los Animales</h3>
-                    <p>Cada mascota recibe atención amorosa y personalizada.</p>
+                    <h3><%= t.servicios.why2_title %></h3>
+                    <p><%= t.servicios.why2_desc %></p>
                 </div>
                 <div class="why-card">
-                    <h3>🔒 Seguridad Garantizada</h3>
-                    <p>Cuidamos la seguridad y bienestar de tu mascota en todo momento.</p>
+                    <h3><%= t.servicios.why3_title %></h3>
+                    <p><%= t.servicios.why3_desc %></p>
                 </div>
                 <div class="why-card">
-                    <h3>📞 Disponibilidad 24/7</h3>
-                    <p>Siempre disponibles para resolver cualquier emergencia.</p>
+                    <h3><%= t.servicios.why4_title %></h3>
+                    <p><%= t.servicios.why4_desc %></p>
                 </div>
             </div>
         </div>
@@ -84,7 +90,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 CuidAnimals. Todos los derechos reservados.</p>
+            <p><%= t.footer.rights %></p>
             <div class="social-links">
                 <a href="https://instagram.com/cuidanimals.esp" target="_blank">Instagram</a>
                 <a href="https://facebook.com/cuidanimals" target="_blank">Facebook</a>
@@ -93,7 +99,7 @@
     </footer>
 
     <!-- Botón Flotante WhatsApp -->
-    <a href="https://wa.me/34622358009?text=Hola%20CuidAnimals%20quiero%20saber%20más%20sobre%20vuestros%20servicios" target="_blank" class="whatsapp-button" title="Contactar por WhatsApp">
+    <a href="https://wa.me/34622358009?text=<%= t.whatsapp.message %>" target="_blank" class="whatsapp-button" title="<%= t.whatsapp.title %>">
         <img src="/images/whatsapp-logo.webp" alt="WhatsApp" class="whatsapp-logo-img">
     </a>
 

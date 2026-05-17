@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<%= t.lang %>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros - CuidAnimals</title>
+    <title><%= t.about.title %></title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -15,36 +15,42 @@
                 <span class="logo-text">CuidAnimals</span>
             </div>
             <ul class="nav-links">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/servicios">Servicios</a></li>
-                <li><a href="/sobre-nosotros" class="active">Sobre Nosotros</a></li>
-                <li><a href="/galeria">Galería</a></li>
-                <li><a href="/citas">Citas</a></li>
-                <li><a href="/contacto">Contacto</a></li>
+                <li><a href="/"><%= t.nav.inicio %></a></li>
+                <li><a href="/servicios"><%= t.nav.servicios %></a></li>
+                <li><a href="/sobre-nosotros" class="active"><%= t.nav.sobre_nosotros %></a></li>
+                <li><a href="/galeria"><%= t.nav.galeria %></a></li>
+                <li><a href="/citas"><%= t.nav.citas %></a></li>
+                <li><a href="/contacto"><%= t.nav.contacto %></a></li>
             </ul>
+            <div class="lang-switcher">
+                <a href="/set-lang/es" class="lang-btn <%= t.lang === 'es' ? 'active' : '' %>">🇪🇸 ES</a>
+                <a href="/set-lang/en" class="lang-btn <%= t.lang === 'en' ? 'active' : '' %>">🇬🇧 EN</a>
+                <a href="/set-lang/fr" class="lang-btn <%= t.lang === 'fr' ? 'active' : '' %>">🇫🇷 FR</a>
+                <a href="/set-lang/de" class="lang-btn <%= t.lang === 'de' ? 'active' : '' %>">🇩🇪 DE</a>
+            </div>
         </div>
     </nav>
 
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Sobre CuidAnimals</h1>
-            <p>Conoce nuestro compromiso con el cuidado de mascotas</p>
+            <h1><%= t.about.page_title %></h1>
+            <p><%= t.about.page_subtitle %></p>
         </div>
     </section>
 
     <!-- Nuestra Historia -->
     <section class="about-section">
         <div class="container">
-            <h2>Nuestra Historia</h2>
+            <h2><%= t.about.historia_title %></h2>
             <div class="about-wrapper">
                 <div class="about-content">
-                    <p>En CuidAnimals, creemos que cada mascota merece el mejor cuidado posible. Nuestro equipo está formado por profesionales apasionados por los animales, dedicados a proporcionar servicios de calidad.</p>
-                    <p>Desde nuestros inicios, hemos atendido a miles de mascotas y sus familias en Pego, Alicante. Nos enorgullece tener una valoración de 5/5 estrellas en Google con más de 5,000 opiniones.</p>
-                    <p>Nuestra misión es simple: proporcionar un cuidado profesional, amoroso y confiable para tu mascota mientras tú trabajas o viajas.</p>
+                    <p><%= t.about.historia_p1 %></p>
+                    <p><%= t.about.historia_p2 %></p>
+                    <p><%= t.about.historia_p3 %></p>
                 </div>
                 <div class="about-image">
-                    <img src="/images/foto1.jpg" alt="Cuidado amoroso en CuidAnimals" class="about-photo">
+                    <img src="/images/foto1.jpg" alt="<%= t.about.img_alt %>" class="about-photo">
                 </div>
             </div>
         </div>
@@ -53,23 +59,23 @@
     <!-- Valores -->
     <section class="values-section">
         <div class="container">
-            <h2>Nuestros Valores</h2>
+            <h2><%= t.about.valores_title %></h2>
             <div class="values-grid">
                 <div class="value-card">
-                    <h3>🐾 Amor por los Animales</h3>
-                    <p>Cada interacción con los animales está basada en el amor y el respeto.</p>
+                    <h3><%= t.about.valor1_title %></h3>
+                    <p><%= t.about.valor1_desc %></p>
                 </div>
                 <div class="value-card">
-                    <h3>🎯 Profesionalismo</h3>
-                    <p>Ofrecemos servicios de la más alta calidad profesional.</p>
+                    <h3><%= t.about.valor2_title %></h3>
+                    <p><%= t.about.valor2_desc %></p>
                 </div>
                 <div class="value-card">
-                    <h3>🔐 Confianza</h3>
-                    <p>Somos el confidente de tus mascotas y tu tranquilidad.</p>
+                    <h3><%= t.about.valor3_title %></h3>
+                    <p><%= t.about.valor3_desc %></p>
                 </div>
                 <div class="value-card">
-                    <h3>💪 Compromiso</h3>
-                    <p>Nos comprometemos a la excelencia en cada servicio.</p>
+                    <h3><%= t.about.valor4_title %></h3>
+                    <p><%= t.about.valor4_desc %></p>
                 </div>
             </div>
         </div>
@@ -78,21 +84,21 @@
     <!-- Información de Contacto -->
     <section class="contact-info-section">
         <div class="container">
-            <h2>Información de Contacto</h2>
+            <h2><%= t.about.contacto_title %></h2>
             <div class="contact-info-grid">
                 <div class="contact-card">
-                    <h3>📍 Ubicación</h3>
+                    <h3><%= t.about.ubicacion_label %></h3>
                     <p><%= contactInfo.direccion %></p>
                 </div>
                 <div class="contact-card">
-                    <h3>📞 Teléfono</h3>
+                    <h3><%= t.about.telefono_label %></h3>
                     <p><a href="tel:<%= contactInfo.telefono %>"><%= contactInfo.telefono %></a></p>
                 </div>
                 <div class="contact-card">
-                    <h3>⏰ Horario</h3>
-                    <p><strong>Lunes a Viernes:</strong> <%= contactInfo.horario.lunes_viernes %></p>
-                    <p><strong>Sábados:</strong> <%= contactInfo.horario.sabados %></p>
-                    <p><strong>Domingos:</strong> <%= contactInfo.horario.domingos %></p>
+                    <h3><%= t.about.horario_label %></h3>
+                    <p><strong><%= t.about.lunes_viernes %>:</strong> <%= contactInfo.horario.lunes_viernes %></p>
+                    <p><strong><%= t.about.sabados %>:</strong> <%= contactInfo.horario.sabados %></p>
+                    <p><strong><%= t.about.domingos %>:</strong> <%= contactInfo.horario.domingos %></p>
                 </div>
             </div>
         </div>
@@ -101,7 +107,7 @@
     <!-- Mapa -->
     <section class="map-section">
         <div class="container">
-            <h2>Visítanos</h2>
+            <h2><%= t.about.visitanos %></h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.3984568074926!2d-0.3987!3d38.7626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd623f8b0f8b0f8b%3A0x1234567890123456!2sCarrer%20Sant%20Jaume%2C%2025%2C%2003780%20Pego%2C%20Alicante!5e0!3m2!1ses!2ses!4v1234567890123" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
@@ -109,7 +115,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 CuidAnimals. Todos los derechos reservados.</p>
+            <p><%= t.footer.rights %></p>
             <div class="social-links">
                 <a href="https://instagram.com/cuidanimals.esp" target="_blank">Instagram</a>
                 <a href="https://facebook.com/cuidanimals" target="_blank">Facebook</a>
@@ -118,7 +124,7 @@
     </footer>
 
     <!-- Botón Flotante WhatsApp -->
-    <a href="https://wa.me/34622358009?text=Hola%20CuidAnimals%20quiero%20saber%20más%20sobre%20vuestros%20servicios" target="_blank" class="whatsapp-button" title="Contactar por WhatsApp">
+    <a href="https://wa.me/34622358009?text=<%= t.whatsapp.message %>" target="_blank" class="whatsapp-button" title="<%= t.whatsapp.title %>">
         <img src="/images/whatsapp-logo.webp" alt="WhatsApp" class="whatsapp-logo-img">
     </a>
 
