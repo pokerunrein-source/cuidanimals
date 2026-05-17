@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+    <!-- Formas Geométricas Flotantes -->
+    <div class="floating-shapes">
+        <div class="shape shape-circle" style="top: 10%; left: 5%;"></div>
+        <div class="shape shape-square" style="top: 20%; right: 10%;"></div>
+        <div class="shape shape-circle" style="bottom: 20%; left: 15%;"></div>
+        <div class="shape shape-triangle" style="bottom: 10%; right: 5%;"></div>
+        <div class="shape shape-square" style="top: 50%; right: 2%;"></div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
@@ -38,6 +47,34 @@
             <h1><%= t.index.hero_title %></h1>
             <p><%= t.index.hero_subtitle %></p>
             <a href="/citas" class="btn btn-primary"><%= t.index.hero_btn %></a>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="estadisticas-section">
+        <div class="container">
+            <div class="estadisticas-grid">
+                <div class="stat-card">
+                    <div class="stat-number">+500</div>
+                    <div class="stat-label">Mascotas Cuidadas</div>
+                    <div class="stat-description">Hemos cuidado miles de mascotas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                    <div class="stat-description">Más de 5 años sirviendo</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.9</div>
+                    <div class="stat-label">Calificación</div>
+                    <div class="stat-description">Puntuación en Google</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Disponibilidad</div>
+                    <div class="stat-description">Siempre a tu servicio</div>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -96,12 +96,47 @@ document.addEventListener('DOMContentLoaded', () => {
     formGroups.forEach((group, index) => {
         group.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s backwards`;
     });
+
+    // Animar números de estadísticas
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const observer3 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumber(entry.target);
+                observer3.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    statNumbers.forEach(stat => {
+        observer3.observe(stat);
+    });
 });
 
 // Función para validar email
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
+
+// Función para animar números
+function animateNumber(element) {
+    const finalNumber = parseInt(element.textContent.replace(/\D/g, ''));
+    const prefix = element.textContent.split(/\d/)[0]; // Para "+", "€", etc.
+    const suffix = element.textContent.split(/\d/).pop(); // Para "%", "/5", etc.
+
+    let currentNumber = 0;
+    const duration = 2000; // 2 segundos
+    const increment = finalNumber / (duration / 50);
+
+    const interval = setInterval(() => {
+        currentNumber += increment;
+        if (currentNumber >= finalNumber) {
+            currentNumber = finalNumber;
+            clearInterval(interval);
+        }
+        element.textContent = prefix + Math.floor(currentNumber).toLocaleString() + suffix;
+    }, 50);
 }
 
 console.log('CuidAnimals - Página cargada con animaciones ✨');
