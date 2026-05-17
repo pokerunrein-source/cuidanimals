@@ -11,7 +11,7 @@ module.exports = {
   },
 
   footer: {
-    rights: '© 2024 CuidAnimals. Tous droits réservés.',
+    rights: '© 2026 CuidAnimals. Tous droits réservés.',
   },
 
   whatsapp: {

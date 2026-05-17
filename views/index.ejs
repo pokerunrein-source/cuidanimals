@@ -7,15 +7,6 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <!-- Formas Geométricas Flotantes -->
-    <div class="floating-shapes">
-        <div class="shape shape-circle" style="top: 10%; left: 5%;"></div>
-        <div class="shape shape-square" style="top: 20%; right: 10%;"></div>
-        <div class="shape shape-circle" style="bottom: 20%; left: 15%;"></div>
-        <div class="shape shape-triangle" style="bottom: 10%; right: 5%;"></div>
-        <div class="shape shape-square" style="top: 50%; right: 2%;"></div>
-    </div>
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
@@ -41,7 +32,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" style="position: relative;">
+        <div class="paw-prints">
+            <div class="paw-print paw-dog" style="top: 10%; left: 5%;">🐾</div>
+            <div class="paw-print paw-cat" style="top: 20%; right: 10%;">🐾</div>
+            <div class="paw-print paw-dog" style="bottom: 20%; left: 15%;">🐾</div>
+            <div class="paw-print paw-cat" style="bottom: 10%; right: 5%;">🐾</div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1><%= t.index.hero_title %></h1>
@@ -51,7 +48,13 @@
     </section>
 
     <!-- Estadísticas -->
-    <section class="estadisticas-section">
+    <section class="estadisticas-section" style="position: relative;">
+        <div class="paw-prints">
+            <div class="paw-print paw-cat" style="top: 15%; left: 8%;">🐾</div>
+            <div class="paw-print paw-dog" style="top: 25%; right: 12%;">🐾</div>
+            <div class="paw-print paw-cat" style="bottom: 15%; right: 10%;">🐾</div>
+            <div class="paw-print paw-dog" style="bottom: 5%; left: 5%;">🐾</div>
+        </div>
         <div class="container">
             <div class="estadisticas-grid">
                 <div class="stat-card">
@@ -79,7 +82,13 @@
     </section>
 
     <!-- Servicios -->
-    <section class="servicios-section">
+    <section class="servicios-section" style="position: relative;">
+        <div class="paw-prints">
+            <div class="paw-print paw-dog" style="top: 10%; left: 8%;">🐾</div>
+            <div class="paw-print paw-cat" style="top: 30%; right: 10%;">🐾</div>
+            <div class="paw-print paw-dog" style="bottom: 20%; right: 8%;">🐾</div>
+            <div class="paw-print paw-cat" style="bottom: 5%; left: 10%;">🐾</div>
+        </div>
         <div class="container">
             <h2><%= t.index.servicios_title %></h2>
             <div class="servicios-grid">
@@ -97,7 +106,13 @@
     </section>
 
     <!-- Testimonios -->
-    <section class="testimonios-section">
+    <section class="testimonios-section" style="position: relative;">
+        <div class="paw-prints">
+            <div class="paw-print paw-cat" style="top: 5%; left: 10%;">🐾</div>
+            <div class="paw-print paw-dog" style="top: 20%; right: 15%;">🐾</div>
+            <div class="paw-print paw-cat" style="bottom: 15%; left: 12%;">🐾</div>
+            <div class="paw-print paw-dog" style="bottom: 10%; right: 8%;">🐾</div>
+        </div>
         <div class="container">
             <h2><%= t.index.testimonios_title %></h2>
             <div class="testimonios-grid">
@@ -117,7 +132,13 @@
     </section>
 
     <!-- CTA -->
-    <section class="cta-section">
+    <section class="cta-section" style="position: relative;">
+        <div class="paw-prints">
+            <div class="paw-print paw-dog" style="top: 15%; left: 12%;">🐾</div>
+            <div class="paw-print paw-cat" style="top: 10%; right: 10%;">🐾</div>
+            <div class="paw-print paw-dog" style="bottom: 15%; right: 15%;">🐾</div>
+            <div class="paw-print paw-cat" style="bottom: 5%; left: 8%;">🐾</div>
+        </div>
         <div class="container">
             <h2><%= t.index.cta_title %></h2>
             <p><%= t.index.cta_subtitle %></p>
@@ -130,8 +151,8 @@
         <div class="container">
             <p><%= t.footer.rights %></p>
             <div class="social-links">
-                <a href="https://instagram.com/cuidanimals.esp" target="_blank">Instagram</a>
-                <a href="https://facebook.com/cuidanimals" target="_blank">Facebook</a>
+                <a href="https://instagram.com/cuidanimals.esp" target="_blank"><img src="/images/Instagram_icon.png" alt="Instagram" class="social-icon"> Instagram</a>
+                <a href="https://facebook.com/cuidanimals" target="_blank"><img src="/images/facebook_logo_icon_257007.webp" alt="Facebook" class="social-icon"> Facebook</a>
             </div>
         </div>
     </footer>
