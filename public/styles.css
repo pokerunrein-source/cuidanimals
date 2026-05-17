@@ -377,16 +377,16 @@ body {
 }
 
 .servicio-card {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 30px;
-    border-radius: 16px;
+    border-radius: 20px;
     text-align: center;
-    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease;
     animation: fadeInUp 0.6s ease-out;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
 }
 
 .servicio-card:hover {
@@ -432,15 +432,15 @@ body {
 }
 
 .testimonial-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 30px;
-    border-radius: 16px;
+    border-radius: 20px;
     border-left: 4px solid var(--primary-color);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.7);
     border-left: 4px solid var(--primary-color);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
     animation: slideInLeft 0.6s ease-out;
     transition: all 0.3s ease;
 }
@@ -568,15 +568,15 @@ body {
 
 .why-card,
 .value-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 30px;
-    border-radius: 16px;
+    border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
 }
 
 .why-card:hover,
@@ -651,15 +651,15 @@ body {
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 30px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
 }
 
 .contact-card:hover {
@@ -761,15 +761,15 @@ body {
 
 .citas-form-wrapper,
 .contacto-wrapper {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 40px;
-    border-radius: 20px;
-    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
     max-width: 900px;
     margin: 0 auto;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
 }
 
 .contacto-wrapper {
@@ -855,15 +855,15 @@ body {
 }
 
 .info-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 30px;
-    border-radius: 16px;
+    border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
 }
 
 .info-card:hover {
