@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="<%= t.lang %>">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= t.index.title %></title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
+<%
+  const pageTitle = t.index.title;
+  const pageDescription = 'Cuidado profesional y amoroso para tu mascota. Guardería de mascotas, paseos de perros y visitas a domicilio en Pego, Alicante.';
+  const pageUrl = '/';
+%>
+<%- include('header', { pageTitle, pageDescription, pageUrl, t }) %>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">

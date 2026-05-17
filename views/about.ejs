@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="<%= t.lang %>">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= t.about.title %></title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
+<%
+  const pageTitle = t.about.title;
+  const pageDescription = 'Conoce la historia de CuidAnimals, nuestro equipo profesional y nuestro compromiso con el cuidado amoroso de mascotas en Pego, Alicante.';
+  const pageUrl = '/sobre-nosotros';
+%>
+<%- include('header', { pageTitle, pageDescription, pageUrl, t }) %>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">

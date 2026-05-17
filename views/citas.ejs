@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="<%= t.lang %>">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= t.citas.title %></title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
+<%
+  const pageTitle = t.citas.title;
+  const pageDescription = 'Reserva tu cita de cuidado de mascotas en CuidAnimals. Respuesta rápida y confirmación en 24 horas. ¡Contáctanos hoy!';
+  const pageUrl = '/citas';
+%>
+<%- include('header', { pageTitle, pageDescription, pageUrl, t }) %>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">

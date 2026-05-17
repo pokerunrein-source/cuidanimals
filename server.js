@@ -110,6 +110,30 @@ app.post('/api/contacto', (req, res) => {
   });
 });
 
+// Sitemap XML
+app.get('/sitemap.xml', (req, res) => {
+  res.type('application/xml');
+  const baseUrl = 'https://cuidanimals.vercel.app';
+  const pages = [
+    { url: '/', priority: '1.0', changefreq: 'daily' },
+    { url: '/servicios', priority: '0.9', changefreq: 'weekly' },
+    { url: '/sobre-nosotros', priority: '0.8', changefreq: 'monthly' },
+    { url: '/galeria', priority: '0.7', changefreq: 'weekly' },
+    { url: '/citas', priority: '0.9', changefreq: 'daily' },
+    { url: '/contacto', priority: '0.8', changefreq: 'monthly' },
+  ];
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages.map(page => `  <url>
+    <loc>${baseUrl}${page.url}</loc>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+  res.send(xml);
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ CuidAnimals está corriendo en http://localhost:${PORT}`);

@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="<%= t.lang %>">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= t.galeria.title %></title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
+<%
+  const pageTitle = t.galeria.title;
+  const pageDescription = 'Galería de mascotas felices en CuidAnimals. Mira a los perros, gatos y otros animales disfrutando de nuestros servicios de cuidado profesional.';
+  const pageUrl = '/galeria';
+%>
+<%- include('header', { pageTitle, pageDescription, pageUrl, t }) %>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
