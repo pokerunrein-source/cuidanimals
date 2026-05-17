@@ -1,37 +1,66 @@
 // Animaciones y funcionalidades interactivas
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll para los links de navegación
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // El navegador maneja la navegación entre páginas
-            // Este código es para smooth scroll dentro de la página si es necesario
-        });
-    });
-
-    // Animación de aparición para elementos
+    // Observador para animar elementos al scroll
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
                 entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observar elementos para animación
+    // Elementos para animar al scroll
     const animateElements = document.querySelectorAll(
-        '.servicio-card, .testimonial-card, .why-card, .value-card, .info-card'
+        '.servicio-card, .testimonial-card, .why-card, .value-card, .info-card, .about-wrapper, .contact-info-grid'
     );
 
-    animateElements.forEach(el => {
+    animateElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.animationDelay = `${index * 0.1}s`;
         observer.observe(el);
+    });
+
+    // Animar títulos de secciones
+    const sectionTitles = document.querySelectorAll('h2');
+    sectionTitles.forEach(title => {
+        const observer2 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInDown 0.6s ease-out';
+                    observer2.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        observer2.observe(title);
+    });
+
+    // Efecto hover en botones
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Animación en el navbar al scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+        }
     });
 
     // Validación de formularios
@@ -54,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             const email = document.getElementById('email').value;
-            const telefonoInput = document.getElementById('telefono').value;
 
             if (!isValidEmail(email)) {
                 e.preventDefault();
@@ -62,6 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Animar elementos del formulario
+    const formGroups = document.querySelectorAll('.form-group');
+    formGroups.forEach((group, index) => {
+        group.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s backwards`;
+    });
 });
 
 // Función para validar email
@@ -70,40 +104,4 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Agregar animación CSS
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateX(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// Función para manejar clics en botones de servicios
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-
-console.log('CuidAnimals - Página cargada correctamente ✅');
+console.log('CuidAnimals - Página cargada con animaciones ✨');
