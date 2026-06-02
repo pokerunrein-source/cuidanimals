@@ -20,10 +20,10 @@
                 <li><a href="/contacto"><%= t.nav.contacto %></a></li>
             </ul>
             <div class="lang-switcher">
-                <a href="/set-lang/es" class="lang-btn <%= t.lang === 'es' ? 'active' : '' %>">🇪🇸 ES</a>
-                <a href="/set-lang/en" class="lang-btn <%= t.lang === 'en' ? 'active' : '' %>">🇬🇧 EN</a>
-                <a href="/set-lang/fr" class="lang-btn <%= t.lang === 'fr' ? 'active' : '' %>">🇫🇷 FR</a>
-                <a href="/set-lang/de" class="lang-btn <%= t.lang === 'de' ? 'active' : '' %>">🇩🇪 DE</a>
+                <a href="/set-lang/es" class="lang-btn <%= t.lang === 'es' ? 'active' : '' %>">ES</a>
+                <a href="/set-lang/en" class="lang-btn <%= t.lang === 'en' ? 'active' : '' %>">EN</a>
+                <a href="/set-lang/fr" class="lang-btn <%= t.lang === 'fr' ? 'active' : '' %>">FR</a>
+                <a href="/set-lang/de" class="lang-btn <%= t.lang === 'de' ? 'active' : '' %>">DE</a>
             </div>
         </div>
     </nav>
@@ -33,6 +33,7 @@
         <div class="container">
             <h1><%= t.servicios.page_title %></h1>
             <p><%= t.servicios.page_subtitle %></p>
+            <p class="page-header-description"><%= t.servicios.page_description %></p>
         </div>
     </section>
 
@@ -50,13 +51,14 @@
                     <div class="servicio-detail-icon"><%= servicio.icono %></div>
                     <div class="servicio-detail-content">
                         <h2><%= servicio.nombre %></h2>
-                        <p><%= servicio.descripcion %></p>
+                        <p><%= servicio.descripcion_detalle || servicio.descripcion %></p>
                         <p class="precio"><strong><%= t.servicios.precio_label %> <%= servicio.precio %></strong></p>
                         <ul class="features">
-                            <li><%= t.servicios.feature1 %></li>
-                            <li><%= t.servicios.feature2 %></li>
-                            <li><%= t.servicios.feature3 %></li>
-                            <li><%= t.servicios.feature4 %></li>
+                            <% if (servicio.features && servicio.features.length) { %>
+                                <% servicio.features.forEach(feature => { %>
+                                    <li><%= feature %></li>
+                                <% }); %>
+                            <% } %>
                         </ul>
                         <a href="/citas" class="btn btn-primary"><%= t.servicios.reservar_prefix %> <%= servicio.nombre %></a>
                     </div>
@@ -103,6 +105,12 @@
             <div class="social-links">
                 <a href="https://instagram.com/cuidanimals.esp" target="_blank"><img src="/images/Instagram_icon.png" alt="Instagram" class="social-icon"> Instagram</a>
                 <a href="https://facebook.com/cuidanimals" target="_blank"><img src="/images/facebook_logo_icon_257007.webp" alt="Facebook" class="social-icon"> Facebook</a>
+                <a href="https://tiktok.com/@cuidanimals" target="_blank" class="tiktok-link">
+                    <svg class="social-icon tiktok-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.12a8.16 8.16 0 0 0 4.77 1.52V7.19a4.85 4.85 0 0 1-1-.5z"/>
+                    </svg>
+                    TikTok
+                </a>
             </div>
         </div>
     </footer>

@@ -20,10 +20,10 @@
                 <li><a href="/contacto"><%= t.nav.contacto %></a></li>
             </ul>
             <div class="lang-switcher">
-                <a href="/set-lang/es" class="lang-btn <%= t.lang === 'es' ? 'active' : '' %>">🇪🇸 ES</a>
-                <a href="/set-lang/en" class="lang-btn <%= t.lang === 'en' ? 'active' : '' %>">🇬🇧 EN</a>
-                <a href="/set-lang/fr" class="lang-btn <%= t.lang === 'fr' ? 'active' : '' %>">🇫🇷 FR</a>
-                <a href="/set-lang/de" class="lang-btn <%= t.lang === 'de' ? 'active' : '' %>">🇩🇪 DE</a>
+                <a href="/set-lang/es" class="lang-btn <%= t.lang === 'es' ? 'active' : '' %>">ES</a>
+                <a href="/set-lang/en" class="lang-btn <%= t.lang === 'en' ? 'active' : '' %>">EN</a>
+                <a href="/set-lang/fr" class="lang-btn <%= t.lang === 'fr' ? 'active' : '' %>">FR</a>
+                <a href="/set-lang/de" class="lang-btn <%= t.lang === 'de' ? 'active' : '' %>">DE</a>
             </div>
         </div>
     </nav>
@@ -38,8 +38,12 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
+            <div class="hero-logo-brand">
+                <span class="hero-logo-icon">🐾</span>
+                <span class="hero-logo-text">CuidAnimals</span>
+            </div>
             <h1><%= t.index.hero_title %></h1>
-            <p><%= t.index.hero_subtitle %></p>
+            <p class="hero-slogan"><%= t.index.hero_subtitle %></p>
             <a href="/citas" class="btn btn-primary"><%= t.index.hero_btn %></a>
         </div>
     </section>
@@ -58,7 +62,9 @@
                     <div class="stat-card">
                         <div class="stat-number"><%= stat.numero %></div>
                         <div class="stat-label"><%= stat.label %></div>
-                        <div class="stat-description"><%= stat.descripcion %></div>
+                        <% if (stat.descripcion) { %>
+                            <div class="stat-description"><%= stat.descripcion %></div>
+                        <% } %>
                     </div>
                 <% }); %>
             </div>
@@ -130,6 +136,43 @@
         </div>
     </section>
 
+    <!-- Horario -->
+    <section class="horario-section" style="position: relative;">
+        <div class="container">
+            <h2><%= t.index.horario_title %></h2>
+            <div class="horario-table">
+                <div class="horario-row">
+                    <span class="horario-dia"><%= t.dias.lunes %></span>
+                    <span class="horario-horas"><%= contactInfo.horario.lunes %></span>
+                </div>
+                <div class="horario-row">
+                    <span class="horario-dia"><%= t.dias.martes %></span>
+                    <span class="horario-horas"><%= contactInfo.horario.martes %></span>
+                </div>
+                <div class="horario-row">
+                    <span class="horario-dia"><%= t.dias.miercoles %></span>
+                    <span class="horario-horas"><%= contactInfo.horario.miercoles %></span>
+                </div>
+                <div class="horario-row">
+                    <span class="horario-dia"><%= t.dias.jueves %></span>
+                    <span class="horario-horas"><%= contactInfo.horario.jueves %></span>
+                </div>
+                <div class="horario-row">
+                    <span class="horario-dia"><%= t.dias.viernes %></span>
+                    <span class="horario-horas"><%= contactInfo.horario.viernes %></span>
+                </div>
+                <div class="horario-row">
+                    <span class="horario-dia"><%= t.dias.sabado %></span>
+                    <span class="horario-horas"><%= contactInfo.horario.sabado %></span>
+                </div>
+                <div class="horario-row horario-cerrado">
+                    <span class="horario-dia"><%= t.dias.domingo %></span>
+                    <span class="horario-horas"><%= contactInfo.horario.domingo %></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -137,6 +180,12 @@
             <div class="social-links">
                 <a href="https://instagram.com/cuidanimals.esp" target="_blank"><img src="/images/Instagram_icon.png" alt="Instagram" class="social-icon"> Instagram</a>
                 <a href="https://facebook.com/cuidanimals" target="_blank"><img src="/images/facebook_logo_icon_257007.webp" alt="Facebook" class="social-icon"> Facebook</a>
+                <a href="https://tiktok.com/@cuidanimals" target="_blank" class="tiktok-link">
+                    <svg class="social-icon tiktok-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.12a8.16 8.16 0 0 0 4.77 1.52V7.19a4.85 4.85 0 0 1-1-.5z"/>
+                    </svg>
+                    TikTok
+                </a>
             </div>
         </div>
     </footer>
