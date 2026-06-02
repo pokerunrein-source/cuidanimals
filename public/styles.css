@@ -2205,6 +2205,31 @@ body > *:not(.floating-shapes):not(.whatsapp-button) {
     height: 24px;
 }
 
+/* Horario mini (en contacto info) */
+.horario-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.horario-row-mini {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 182, 217, 0.2);
+    font-size: 0.9rem;
+}
+
+.horario-row-mini:last-child {
+    border-bottom: none;
+}
+
+.horario-row-mini.horario-cerrado span:last-child {
+    color: #e53e3e;
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
     .hero-logo-text {
         font-size: 1.4rem;

@@ -96,9 +96,36 @@
 
                     <div class="info-item">
                         <h3><%= t.contacto.horario_section %></h3>
-                        <p><strong><%= t.contacto.lunes_viernes %>:</strong> <%= contactInfo.horario.lunes_viernes %></p>
-                        <p><strong><%= t.contacto.sabados %>:</strong> <%= contactInfo.horario.sabados %></p>
-                        <p><strong><%= t.contacto.domingos %>:</strong> <%= contactInfo.horario.domingos %></p>
+                        <div class="horario-mini">
+                            <div class="horario-row-mini">
+                                <span><strong><%= t.dias.lunes %>:</strong></span>
+                                <span><%= contactInfo.horario.lunes %></span>
+                            </div>
+                            <div class="horario-row-mini">
+                                <span><strong><%= t.dias.martes %>:</strong></span>
+                                <span><%= contactInfo.horario.martes %></span>
+                            </div>
+                            <div class="horario-row-mini">
+                                <span><strong><%= t.dias.miercoles %>:</strong></span>
+                                <span><%= contactInfo.horario.miercoles %></span>
+                            </div>
+                            <div class="horario-row-mini">
+                                <span><strong><%= t.dias.jueves %>:</strong></span>
+                                <span><%= contactInfo.horario.jueves %></span>
+                            </div>
+                            <div class="horario-row-mini">
+                                <span><strong><%= t.dias.viernes %>:</strong></span>
+                                <span><%= contactInfo.horario.viernes %></span>
+                            </div>
+                            <div class="horario-row-mini">
+                                <span><strong><%= t.dias.sabado %>:</strong></span>
+                                <span><%= contactInfo.horario.sabado %></span>
+                            </div>
+                            <div class="horario-row-mini horario-cerrado">
+                                <span><strong><%= t.dias.domingo %>:</strong></span>
+                                <span><%= contactInfo.horario.domingo %></span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="info-item">
