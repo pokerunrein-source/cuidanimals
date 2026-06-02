@@ -519,29 +519,7 @@ body > *:not(.floating-shapes):not(.whatsapp-button) {
 
 .lang-btn:hover {
     transform: scale(1.08);
-}
-
-/* Spain - Red & Yellow */
-.lang-btn[href*="es"] {
-    background: linear-gradient(to right, #C60B1E 0%, #C60B1E 45%, #FFC400 45%, #FFC400 100%);
-    color: #000;
-    text-shadow: none;
-}
-
-/* English - Blue, White & Red */
-.lang-btn[href*="en"] {
-    background: linear-gradient(to right, #012169 0%, #012169 30%, #FFFFFF 30%, #FFFFFF 50%, #C8102E 50%, #C8102E 100%);
-}
-
-/* France - Blue, White & Red */
-.lang-btn[href*="fr"] {
-    background: linear-gradient(to right, #002395 0%, #002395 33%, #FFFFFF 33%, #FFFFFF 66%, #EF2B2D 66%, #EF2B2D 100%);
-}
-
-/* Germany - Black, Red & Gold */
-.lang-btn[href*="de"] {
-    background: linear-gradient(to bottom, #000000 0%, #000000 33%, #D00000 33%, #D00000 66%, #FFCE00 66%, #FFCE00 100%);
-    color: #FFF;
+    opacity: 0.8;
 }
 
 .lang-btn.active {
